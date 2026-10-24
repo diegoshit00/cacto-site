@@ -1,0 +1,23 @@
+SITE DA CACTO COM ASSISTENTE DE IA
+
+O que tem aqui
+- index.html: o site completo, com o botão Assistente e os links atuais dos jogos.
+- netlify/functions/chat.mts: a function que conversa com a Groq. A chave NAO fica nos arquivos.
+
+Passo 1: colocar a chave (uma vez só)
+1. Abra o site lustrous-boba-f064df no painel do Netlify.
+2. Site configuration > Environment variables > Add a variable.
+3. Nome: GROQ_API_KEY. Valor: a chave da Groq. Escopo: Functions (ou All).
+4. Salve.
+
+Passo 2: publicar
+1. Em Deploys, arraste a PASTA que tem o index.html e a pasta netlify (extraia o zip antes).
+2. Espere o deploy ficar Published.
+
+Passo 3: testar
+1. Abra https://lustrous-boba-f064df.netlify.app/api/chat no navegador.
+   - Se aparecer {"error":"method"}, a function está no ar.
+   - Se aparecer a página do site ou erro 404, o Drop não subiu a function. Nesse caso use o GitHub (me avise).
+2. Abra o site, clique em Assistente e pergunte "O que é a Cacto?".
+
+Se mudar a chave depois, faça um novo deploy (as variáveis só valem no deploy seguinte).
